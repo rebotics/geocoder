@@ -55,6 +55,7 @@ class TimezoneQuery(MultipleResultsQuery):
 
     def _build_params(self, location, provider_key, **kwargs):
         return {
+            'key': provider_key,
             'location': str(Location(location)),
             'timestamp': kwargs.get('timestamp', time.time()),
         }
